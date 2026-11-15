@@ -4,7 +4,7 @@
 # Upstream image : chromadb/chroma:0.6.3 (Docker Hub, used unmodified)
 #                  -> https://github.com/chroma-core/chroma
 #
-# Ports   : host 8128 -> container 8000. The host port is in the
+# Ports   : host 8141 -> container 8000. The host port is in the
 #           TOS-recommended 8000-19999 range and is not one of the reserved
 #           ports (22/80/443/445/3306/5050/5432/6379/8181/8443).
 # Volumes : all persistent data lives below
@@ -39,7 +39,7 @@ services:
       - |
         @@ENTRYPOINT_SH@@
     ports:
-      - "8128:8000"
+      - "8141:8000"
     environment:
       TZ: "Asia/Shanghai"
       CHROMA_PERSIST_DIRECTORY: "/data/chroma"
@@ -57,5 +57,5 @@ services:
 # web.port is the published host port above, protocol is http.
 x-app-meta:
   web:
-    port: 8128
+    port: 8141
     protocol: http

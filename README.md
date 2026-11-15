@@ -18,7 +18,7 @@ ChromaDB on TOS 7 through the App Center:
 | | |
 |---|---|
 | Container image | `chromadb/chroma:0.6.3` (Docker Hub, used unmodified) |
-| Open | `http://<NAS-IP>:8128/` (container port 8000) |
+| Open | `http://<NAS-IP>:8141/` (container port 8000) |
 | Runs as | non-root, `user: "1000:1000"` |
 | Persistent data | `/data` → `/Volume1/DockerAppData/chromadbdocker/data` |
 | Logs | `docker logs chromadbdocker` (stdout/stderr) |
@@ -57,8 +57,8 @@ table lists what is created and how it behaves. Nothing else is written.
 
 ```bash
 scripts/build.sh                  # -> out/chromadbdocker.tar.gz + .sha256
-scripts/build.sh 0.6.3-2   # packaging iteration bump
-scripts/build.sh 0.6.3-1 aarch64
+scripts/build.sh 0.6.3-3   # packaging iteration bump
+scripts/build.sh 0.6.3-2 aarch64
 ```
 
 The build stages the four files, substitutes the version/platform placeholders,
@@ -84,12 +84,12 @@ bash test/install-and-verify.sh                  # on-device E2E (needs root)
 ## Store submission checklist
 
 1. Public GitHub repo (code + README only).
-2. Release **tag `v0.6.3-1`**, assets `chromadbdocker.tar.gz` +
+2. Release **tag `v0.6.3-2`**, assets `chromadbdocker.tar.gz` +
    `chromadbdocker.tar.gz.sha256` (Docker asset naming: `<app_id>.tar.gz`, **no
    platform suffix**).
 3. Developer platform → Add Application: ID `chromadbdocker`, package type Docker,
    repository URL, architecture `x86_64`.
-4. Version Management → Add Version `0.6.3-1` → automated validation → review.
+4. Version Management → Add Version `0.6.3-2` → automated validation → review.
 
 ## License / branding
 

@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "chromadbdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[zh-cn]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB 是一个开源的向量数据库：保存向量、元数据与文档，按相似度检索、按元数据过滤，是 RAG 助手与语义搜索的存储层。它只开一个 HTTP 端口、集合保存在应用数据目录，不需要额外数据库。"
+release_note = "1. 首个版本：基于 Docker Hub 的 ChromaDB 0.6.3，以非 root 容器运行。向量数据库，提供 HTTP API v2、集合与元数据过滤；数据持久化在应用数据目录。"
+important    = "需要 DockerEngine（缺失时应用中心会自动安装）。HTTP API 使用已发布端口，API v2 路径在 /api/v2（健康检查 /api/v2/heartbeat）。默认没有任何鉴权——请只在内网使用，暴露到公网前加一层反向代理保护。集合、元数据与 WAL 都保存在 DockerAppData/chromadbdocker/data。接口为纯 HTTP，远程访问请配 TLS。"
+
+[zh-hk]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB 是一個開源的向量資料庫：保存向量、中繼資料與文件，按相似度檢索、按中繼資料過濾，是 RAG 助手與語義搜尋的存儲層。它只開一個 HTTP 端口、集合保存在應用資料目錄，不需要額外資料庫。"
+release_note = "1. 首個版本：基於 Docker Hub 的 ChromaDB 0.6.3，以非 root 容器運行。向量資料庫，提供 HTTP API v2、集合與中繼資料過濾；資料持久化在應用資料目錄。"
+important    = "需要 DockerEngine（缺少時應用中心會自動安裝）。HTTP API 使用已發佈端口，API v2 路徑在 /api/v2（健康檢查 /api/v2/heartbeat）。預設沒有任何鑑權——請只在內網使用，公開到互聯網前加一層反向代理保護。集合、中繼資料與 WAL 都保存在 DockerAppData/chromadbdocker/data。介面為純 HTTP，遠端存取請配 TLS。"
+
+[fr-fr]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[de-de]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[it-it]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[es-es]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[hu-hu]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[ja-jp]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[ko-kr]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[pl-pl]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[ru-ru]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[tr-tr]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[pt-pt]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[ar-sa]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[cs-cz]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[he-il]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[id-id]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[nb-no]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[nl-nl]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[sv-se]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[th-th]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+
+[vi-vn]
+name         = "ChromaDB"
+auth         = "chroma-core"
+version      = "@@VERSION@@"
+descript     = "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database."
+release_note = "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access."
+

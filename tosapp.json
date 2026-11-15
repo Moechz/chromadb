@@ -1,0 +1,105 @@
+{
+  "app_id": "chromadbdocker",
+  "title": "ChromaDB",
+  "image": "chromadb/chroma:0.6.3",
+  "repo_name": "chromadb",
+  "mode": "wrapper",
+  "container_port": 8000,
+  "category": [
+    "Artificial_Intelligence"
+  ],
+  "volumes": [
+    {
+      "host": "/Volume1/DockerAppData/chromadbdocker/data",
+      "container": "/data"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai",
+    "CHROMA_PERSIST_DIRECTORY": "/data/chroma",
+    "PYTHONPATH": "/chroma"
+  },
+  "auth": "chroma-core",
+  "upstream_url": "https://github.com/chroma-core/chroma",
+  "upstream_license": "Apache-2.0",
+  "descript": "ChromaDB is an open-source embedding database: store vectors with metadata and documents, query by similarity, and filter by metadata - the storage layer behind RAG assistants and semantic search. It speaks HTTP on one port, keeps collections in the application data folder and needs no external database.",
+  "release_note": "1. First release: ChromaDB 0.6.3 from Docker Hub as a non-root container. Embedding database with HTTP API v2, collections and metadata filtering; data persisted in the application data folder.",
+  "important": "Requires DockerEngine (installed automatically if missing). The HTTP API listens on the published port; API v2 is served under /api/v2 (health at /api/v2/heartbeat). There is NO authentication by default - keep it on your LAN or protect it with a reverse proxy before exposing it. Collections, metadata and the WAL live in DockerAppData/chromadbdocker/data. Plain HTTP; use TLS for remote access.",
+  "probe": {
+    "user_in_image": "(root)",
+    "entrypoint": [
+      "/docker_entrypoint.sh"
+    ],
+    "cmd": [
+      "--workers ${CHROMA_WORKERS} --host ${CHROMA_HOST_ADDR} --port ${CHROMA_HOST_PORT} --proxy-headers --log-config ${CHROMA_LOG_CONFIG} --timeout-keep-alive ${CHROMA_TIMEOUT_KEEP_ALIVE}"
+    ],
+    "exposed_ports": [
+      8000
+    ],
+    "declared_volumes": [],
+    "image_healthcheck": [],
+    "digest": "chromadb/chroma@sha256:e0e78dc7609a599b63c99753442c7d01b1d3d369ce0e3bf3e0540536fec4fa7a",
+    "architecture": "x86_64",
+    "platforms": [
+      "x86_64",
+      "aarch64"
+    ],
+    "http_client_in_image": "curl",
+    "trial_run": {
+      "ok": false,
+      "http_code": "",
+      "state": "exited",
+      "paths": [],
+      "host_port": 18000,
+      "log_tail": "cal/bin/uvicorn\", line 8, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/click/core.py\", line 1161, in __call__\n    return self.main(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/click/core.py\", line 1082, in main\n    rv = self.invoke(ctx)\n         ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/click/core.py\", line 1443, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/click/core.py\", line 788, in invoke\n    return __callback(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/uvicorn/main.py\", line 412, in main\n    run(\n  File \"/usr/local/lib/python3.11/site-packages/uvicorn/main.py\", line 516, in run\n    config = Config(\n             ^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/uvicorn/config.py\", line 274, in __init__\n    self.configure_logging()\n  File \"/usr/local/lib/python3.11/site-packages/uvicorn/config.py\", line 378, in configure_logging\n    logging.config.dictConfig(loaded_config)\n  File \"/usr/local/lib/python3.11/logging/config.py\", line 823, in dictConfig\n    dictConfigClass(config).configure()\n  File \"/usr/local/lib/python3.11/logging/config.py\", line 580, in configure\n    raise ValueError('Unable to configure handler '\nValueError: Unable to configure handler 'file'",
+      "files_in_mounts": ""
+    },
+    "docker_hub": {},
+    "github": {}
+  },
+  "healthcheck": [
+    "CMD-SHELL",
+    "curl -s -o /dev/null http://127.0.0.1:8000/api/v2/heartbeat || exit 1"
+  ],
+  "entrypoint_file": "src/entrypoint.sh",
+  "platform": "x86_64",
+  "user": "1000:1000",
+  "publisher": "Moechz",
+  "compose_project": "chromadbdocker",
+  "github_repo": "chromadb",
+  "upstream_version": "0.6.3",
+  "release_tag_prefix": "v",
+  "version": "0.6.3-1",
+  "help": "https://github.com/Moechz/chroma/issues",
+  "official": "https://github.com/chroma-core/chroma",
+  "license": "Apache-2.0",
+  "docker_socket": false,
+  "group_add": [],
+  "healthcheck_start_period": "45s",
+  "http_path": "/api/v2/heartbeat",
+  "wrapper_note": "the image runs uvicorn from /chroma and writes its log file into the current\ndirectory; a non-root container cannot write there. This wrapper runs the server\nfrom the mounted data folder with PYTHONPATH pointing at the code, so both the\nlog and the persisted collections stay on the volume.",
+  "wrapper_note_readme": "- **Entrypoint wrapper**: Chroma writes `chroma.log` into its working directory; the wrapper runs uvicorn from `/data` with `PYTHONPATH=/chroma` and `CHROMA_PERSIST_DIRECTORY=/data/chroma`, so logs and collections live on the volume.",
+  "translations": {
+    "zh-cn": {
+      "descript": "ChromaDB 是一个开源的向量数据库：保存向量、元数据与文档，按相似度检索、按元数据过滤，是 RAG 助手与语义搜索的存储层。它只开一个 HTTP 端口、集合保存在应用数据目录，不需要额外数据库。",
+      "important": "需要 DockerEngine（缺失时应用中心会自动安装）。HTTP API 使用已发布端口，API v2 路径在 /api/v2（健康检查 /api/v2/heartbeat）。默认没有任何鉴权——请只在内网使用，暴露到公网前加一层反向代理保护。集合、元数据与 WAL 都保存在 DockerAppData/chromadbdocker/data。接口为纯 HTTP，远程访问请配 TLS。",
+      "release_note": "1. 首个版本：基于 Docker Hub 的 ChromaDB 0.6.3，以非 root 容器运行。向量数据库，提供 HTTP API v2、集合与元数据过滤；数据持久化在应用数据目录。"
+    },
+    "zh-hk": {
+      "descript": "ChromaDB 是一個開源的向量資料庫：保存向量、中繼資料與文件，按相似度檢索、按中繼資料過濾，是 RAG 助手與語義搜尋的存儲層。它只開一個 HTTP 端口、集合保存在應用資料目錄，不需要額外資料庫。",
+      "important": "需要 DockerEngine（缺少時應用中心會自動安裝）。HTTP API 使用已發佈端口，API v2 路徑在 /api/v2（健康檢查 /api/v2/heartbeat）。預設沒有任何鑑權——請只在內網使用，公開到互聯網前加一層反向代理保護。集合、中繼資料與 WAL 都保存在 DockerAppData/chromadbdocker/data。介面為純 HTTP，遠端存取請配 TLS。",
+      "release_note": "1. 首個版本：基於 Docker Hub 的 ChromaDB 0.6.3，以非 root 容器運行。向量資料庫，提供 HTTP API v2、集合與中繼資料過濾；資料持久化在應用資料目錄。"
+    }
+  },
+  "data_notes": "`/data` (mounted from `DockerAppData/chromadbdocker/data`) holds the persisted collections (`chroma/`), the WAL and `chroma.log`.",
+  "design_notes": [
+    "**Writable working directory.** The image writes its log file into the cwd; the wrapper runs from the mounted volume with `PYTHONPATH=/chroma` so the code stays read-only while state is persistent.",
+    "**HTTP API only.** One port serves API v2 (and the v1 compatibility endpoints)."
+  ],
+  "limitations": [
+    "- No authentication by default; anyone reaching the port can read and write collections.",
+    "- The UI is not bundled (ChromaDB is API-first); use an SDK or a client such as AnythingLLM.",
+    "- The UI/API is plain HTTP; use a TLS reverse proxy for remote access."
+  ],
+  "host_port": 8128
+}

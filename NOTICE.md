@@ -78,7 +78,8 @@ image, so the only real fix is to move to a maintained upstream release:
 
 - this package now ships **1.5.9** (latest upstream release, May 2026), which
   carries a current Debian base and a current Rust server instead of the frozen
-  Python 3.11 / `uvicorn` / `onnxruntime` stack that produced the findings;
+  Python 3.11 / `uvicorn` / `onnxruntime` stack that the findings were reported
+  against;
 - no CVE is fixed by patching inside this repository — the package never
   contains application code.
 
